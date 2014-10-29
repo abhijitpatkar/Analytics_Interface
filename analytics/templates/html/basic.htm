@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+<title>
+    Dashboard Home
+</title>
+    <script type="text/javascript" src="/templates/script/jquery.js"></script>
+    <script type="text/javascript" src="/templates/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/templates/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/templates/css/bootstrap-theme.css" type="text/css"/>
+    {% block header %}{% endblock %}
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Dashboard</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Charts <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/genchart/">Gender Wise</a></li>
+            <li><a href="/courchart/">Course Wise</a></li>
+            <li class="divider"></li>
+            <li><a href="/sumdata/">Summery</a></li>
+          </ul>
+        </li>
+      </ul>
+
+
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div id="content">
+        {% block content  %}This is content block is being replaced {% endblock %}
+</div>
+</body>
+</html>

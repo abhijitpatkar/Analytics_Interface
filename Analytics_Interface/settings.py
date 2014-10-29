@@ -37,6 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'analytics',
+    'tastypie',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,6 +53,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'Analytics_Interface.urls'
 
 WSGI_APPLICATION = 'Analytics_Interface.wsgi.application'
+
 
 
 # Database
