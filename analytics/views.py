@@ -11,3 +11,7 @@ def courchart(request):
 
 def genchart(request):
     return render_to_response('html/genderchart.htm',{})
+
+
+def agedata(request):
+    return render_to_response('html/agechart.htm',{})

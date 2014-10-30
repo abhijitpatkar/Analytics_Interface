@@ -1,3 +1,4 @@
+
 /**
  * Created by root on 29/10/14.
  */
@@ -11,36 +12,25 @@ $(document).ready(function(){
            /*alert(response)*/
            /*alert("hi")*/
            tabledetails=""
-           var Science=0
-           var Arts=0
-           var Commerce=0
+           var AGE_13_to_14 = 0
+           var AGE_15_to_16 = 0
            for(i=0;i<response.objects.length;i++)
             {
-                        var cand_cour_name=response.objects[i].cand_cour_name;
-                        if (cand_cour_name=='Science')
-                        {
-                        Science=Science+1
-                        }
-                        else if(cand_cour_name=='Commerce')
-                        {
-                            Commerce=Commerce+1
-                        }
-                      else{
-                                                        Arts=Arts+1
-
-                        }
-
-                        /*tabledetails+="<tr><td>"+cand_email+"</td></tr>"*/
+              var cand_sample_age=response.objects[i].cand_sample_age;
+              if (cand_sample_age<=14){
+                  AGE_13_to_14=AGE_13_to_14+1
+              }
+              else if(cand_sample_age>=14 && cand_sample_age<=16){
+                  AGE_15_to_16=AGE_15_to_16+1
+              }
 
             }
             //show_in_table(tabledetails)
-
-            var data =[Science,Commerce,Arts]
-
+            var data =[AGE_13_to_14,AGE_15_to_16]
             var r =300
 
             var color=d3.scale.ordinal()
-                .range(["red","orange","green"]);
+                .range(["green","maroon"]);
 
             var canvas =d3.select("body").append("svg")
                 .attr("width",1500)
@@ -68,6 +58,7 @@ $(document).ready(function(){
                 .attr("font-anchor","middle")
                 .attr("font-size","1.5em")
                 .text(function(d){return d.data;});
+
                }
     });
     function show_in_table(tabledetails)
@@ -80,3 +71,6 @@ $(document).ready(function(){
 }
 
 });
+
+
+

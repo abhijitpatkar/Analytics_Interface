@@ -17,4 +17,6 @@ class mst_candidates(models.Model):
     cand_gender = models.CharField(max_length=1,null=True)
     cand_date_of_birth = models.DateTimeField(auto_now_add=False,null=True)
     cand_application_datetime = models.DateTimeField(auto_now_add=True,null=False,blank=False)
+    cand_sample_age=models.IntegerField(null=True,blank=True)
+
 

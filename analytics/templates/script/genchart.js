@@ -11,36 +11,30 @@ $(document).ready(function(){
            /*alert(response)*/
            /*alert("hi")*/
            tabledetails=""
-           var Science=0
-           var Arts=0
-           var Commerce=0
+           var male=0
+           var female=0
            for(i=0;i<response.objects.length;i++)
             {
-                        var cand_cour_name=response.objects[i].cand_cour_name;
-                        if (cand_cour_name=='Science')
+                        var cand_gender=response.objects[i].cand_gender;
+                        if (cand_gender=='M')
                         {
-                        Science=Science+1
+                        male=male+1
                         }
-                        else if(cand_cour_name=='Commerce')
+                        else
                         {
-                            Commerce=Commerce+1
-                        }
-                      else{
-                                                        Arts=Arts+1
-
+                            female=female+1
                         }
 
                         /*tabledetails+="<tr><td>"+cand_email+"</td></tr>"*/
-
             }
             //show_in_table(tabledetails)
 
-            var data =[Science,Commerce,Arts]
+            var data =[male,female]
 
             var r =300
 
             var color=d3.scale.ordinal()
-                .range(["red","orange","green"]);
+                .range(["red","orange"]);
 
             var canvas =d3.select("body").append("svg")
                 .attr("width",1500)
@@ -57,12 +51,10 @@ $(document).ready(function(){
                 .enter()
                 .append("g")
                 .attr("class","arc")
-            /*arcs.append("path")
-                .attr("d",arc);*/
+
             arcs.append("path")
                 .attr("d",arc)
                 .attr("fill",function(d){return color(d.data);});
-
             arcs.append("text")
                 .attr("transform",function(d){return "translate("+arc.centroid(d)+")";})
                 .attr("font-anchor","middle")

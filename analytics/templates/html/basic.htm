@@ -7,6 +7,8 @@
     <script type="text/javascript" src="/templates/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/templates/css/bootstrap.min.css" type="text/css"/>
     <link rel="stylesheet" href="/templates/css/bootstrap-theme.css" type="text/css"/>
+    <script type="text/javascript" src="/templates/script/d3.v3.min.js"></script>
+
     {% block header %}{% endblock %}
 </head>
 <body>
@@ -15,12 +17,9 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+
       </button>
-      <a class="navbar-brand" href="#">Dashboard</a>
+      <a class="navbar-brand" href="/dashboard/">Dashboard Home</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -32,8 +31,8 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="/genchart/">Gender Wise</a></li>
             <li><a href="/courchart/">Course Wise</a></li>
-            <li class="divider"></li>
-            <li><a href="/sumdata/">Summery</a></li>
+            <li><a href="/agedata/">Age Wise</a></li>
+
           </ul>
         </li>
       </ul>
@@ -45,7 +44,8 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div id="content">
-        {% block content  %}This is content block is being replaced {% endblock %}
+        {% block content  %}<marquee><p align="center">Welcome to home page!!!! Please Select the type of chart</p></marquee> {% endblock %}
 </div>
+
 </body>
 </html>
